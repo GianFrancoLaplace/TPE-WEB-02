@@ -41,31 +41,61 @@
     
     <section class="section_form">
         <form action=# method="post" id="form">
+            <h6 class="form__subtitulo"> información personal:</h6>
             <ul>
                 <li>
-                    <label for="name">Nombre:</label>
-                    <input type="text" placeholder="Nombre" value=""name="user_name" id="input-name" required minlength="2">
+                    <label for="name">Nombre completo:</label>
+                    <input type="text" placeholder="Nombre" value=""name="user_name" id="input-name" required>
+                    <!-- required minlength="2"> -->
                 </li>
                 <li>
                     <label for="mail">Correo:</label>
-                    <input placeholder="Email" type="email" name="user_email" id="input-email" required minlength="8">
+                    <input placeholder="Email" type="email" name="user_email" id="input-email">
+                    <!-- required minlength="8"> -->
                 </li>
                 <li>
-                    <label for="subject">Asunto:</label>
+                    <label for="subject">Contraseña:</label>
                     <input type="text" placeholder="Asunto" name="user_subject" id="input-subject">
                 </li>
                 <li>
-                    <label for="msg">Mensaje:</label>
-                    <textarea name="user_message" id="input-msg" required minlength="4"></textarea >
-                </li>
-                <li class="button">
-                    <button id="button-form">Enviar</button>
+                    <label for="">Confirmar Contraseña:</label>
+                    <input type="password" id="input-password">
                 </li>
             </ul>
+            <h6 class="form__subtitulo">información de perfil:</h6>
+            <ul>
+                <li>
+                    <label for="">Nombre de usuario:</label>
+                    <input type="text" id="input-user">
+                </li>
+                <li>
+                    <label for="">Fecha de nacimiento:</label>
+                    <input type="date" id="input-fecha">
+                </li>
+                <li>
+                    <label for="">Sexo:</label>
+                    <select name="Género" id="select-genero">
+                        <option value="">Femenino</option>
+                        <option value="">Maculino</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="">Actividad que realiza:</label>
+                    <select name="" id="select-actividad">
+                        <option value="">Futból</option>
+                    </select>
+                </li>
+                <li class="form_li-check">
+                    <input type="checkbox" name="" id="check-term"> 
+                    <label class="label-check label-captcha" for="">Acepto los términos y condiciones</label>
+                </li>
+            </ul>
+            
             <div class="container-checkbox-captcha">
                 <input type="checkbox" class="input-captcha" id="captcha-check">
                 <label for="" class="label-captcha"> No soy un robot </label>
             </div>
+
             <div class="container-captcha">
                 <div class="captcha-area">
                     <div class="captcha-img">
@@ -73,39 +103,43 @@
                         <span class="captcha"></span>
                     </div>
                 </div>
-
-            <div id="captcha-container"></div>
-            <input type="text" id="captcha-input">
-            <button onclick="validateCaptcha()">Validar</button>
             
-        </div>
-                
+
+            <div id="captcha-container">
             </div>
-        </form>  
+
+            <input type="text" id="captcha-input">
+            <button class="form_btn" id="captcha-reset">Reinciar</button>
+            <button class="form_btn" id="btn-enviar">Enviar</button>
+            
+            </div> <!----CIERRA EL CAPTCHA---->
+            
+        </form> 
         
     </section>
-    <footer class="footer footer-form priColor">
-        <div class="footer_container_icon">
-            <a href="">
+
+    <footer class="footer footer--form">
+        <div class="footer__contenedor--icon">
+            <a href="index.html">
                 <img src="/images/logo.jfif">
             </a>
         </div>
-        <div class="footer_container_p-description">
-            <p class="footer_p-description">
-                En fit healthy, descubre laverdad de ejercioos, información nuticional y motivación para lograr tu mejor cambio físico.
+        <div class="footer__contenedor__p--descripcion">
+            <p>
+                En fit healthy, descubre la variedad de ejercios, información nuticional y motivación para lograr tu mejor estado físico.
             </p>
         </div>
         <div>
-            <div class="footer_container_subtitle">
-                <h5 class="footer_subtitle footer_subtitle-pri">
+            <div class="footer__contenedor--subtitulo">
+                <h5>
                     Hazte parte!
                 </h5>
-                <h6 class="footer_subtitle footer_subtitle-sec">
+                <h6>
                     Compartamos esta pasión y crezcamos juntos
                 </h6>
             </div>
 
-            <ul class="footer_ul-socialMedia">
+            <ul class="footer__ul--social">
                 <li>
                     <a href="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>

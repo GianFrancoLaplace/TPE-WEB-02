@@ -18,12 +18,12 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.body_relative{
+.body--relative{
     position: relative;
     padding-bottom: 145px;
 }
 
-.body_index{
+.body__index{
     padding-bottom: 1em;
 }
 
@@ -65,7 +65,7 @@ img {
 
 .encabezado img {
     margin: 10px;
-    width: 80%;
+    width: 180px;
     height: 40px;
 }
 
@@ -123,11 +123,11 @@ img {
 /*TREN SUPERIOR*/
 /*imagen de portada, texto y contenido*/
 
-.contenedor {
+.main__contenedor--img--home {
     position: relative;
 }
 
-.contenedor img {
+.main__contenedor--img--home img {
     width: 100%;
     height: 600px;
     object-fit: cover;
@@ -163,6 +163,12 @@ h2 {
     text-align: center;
     font-size: 32px;
     /* background-image: url(/images/mh-trainer-2-1533576998.png) */
+}
+
+.form__subtitulo{
+    padding-left: 40px;
+    font-size: 16px;
+    color: aliceblue;
 }
 
 form {
@@ -215,6 +221,15 @@ input:focus:invalid {
     border: rgb(219, 18, 18) solid;
 }
 
+input[type="checkbox"]{
+    width: 13px;
+}
+
+li input[type="checkbox"]{
+    width: 13px;
+    margin-left: 32%;
+}
+
 textarea {
     /* Alinear los campos de texto multilínea con sus etiquetas */
     vertical-align: top;
@@ -239,6 +254,7 @@ textarea {
     align-items: center;
 }
 
+
 .label-captcha {
     margin-left: 8px;
     width: fit-content;
@@ -246,11 +262,16 @@ textarea {
     color: #000;
 }
 
+.label-check{
+    color: aliceblue;
+}
+
 .input-captcha {
     width: fit-content;
 }
 
 .container-captcha {
+    position: relative;
     margin: 25px auto 0 auto;
     max-width: 485px;
     width: 100%;
@@ -266,27 +287,38 @@ textarea {
 }
 
 #captcha-container {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+
+    display: flex;
     width: 200px;
     height: 80px;
-    background-color: #f2f2f2;
-    display: flex;
     align-items: center;
     justify-content: center;
+
+    background-color: transparent;
+    color: pink;
     font-size: 24px;
     font-weight: bold;
-  }
+    transform: translate(-50%,-50%);
+}
 
 #captcha-input {
     margin-top: 10px;
 }
 
-/*  CAPTCHA END */
+.form_btn{
+    margin: 4px;
+}
+
+/*  CAPTCHA TERMINA */
 
 
 /*IMAGEN DE HAZTE PARTE*/
 
 .section_form {
-    margin: 15px 80px;
+    margin: 15px 80px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -301,13 +333,12 @@ textarea {
 
 .main_img-form {
     width: 100%;
-    height: 90vh;
+    height: 110%;
     object-fit: cover;
     z-index: 0;
-    width: 100%;
-    height: 1000px;
 }
 
+/* FORM TERMINA */
 
 /* FOOTER */
 
@@ -322,18 +353,18 @@ footer{
     height: 160px;
 }
 
-.footer-form{
-    position: absolute;
-    bottom:-100px;
+.footer--form{
+    position: relative;
+    bottom:0px;
 }
 
-.footer_container_icon{
+.footer__contenedor--icon{
     height: 40%;
     width: 50%;
     margin: 35px 0px 0px 50px;
 }
 
-.footer_container_p-description{
+.footer__contenedor__p--descripcion{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -343,37 +374,36 @@ footer{
     text-align: center;
 }
 
+.footer__contenedor__p--descripcion p{
+    margin-bottom: 0;
+}
+
 .footer img{
     width: 135px;
     height: 40px;
 }
 
-.footer_p-description{
-    margin-bottom: 0;
-}
-
-.footer_container_subtitle{
+.footer__contenedor--subtitulo{
     position: absolute;
     right: 0;
     text-align: right;
     margin: 35px 25px 0 0;
 }
 
-.footer_subtitle{
+.footer__contenedor--subtitulo h5{
     margin: 0 0 5px 0 ;
-}
-
-.footer_subtitle-pri{
     font-size: 1.5em;
     font-weight: 200;
 }
 
-.footer_subtitle-sec{
+.footer__contenedor--subtitulo h6{
+    margin: 0 0 5px 0 ;
     font-size: 1em;
     font-weight: 200;
 }
 
-.footer_ul-socialMedia{
+
+.footer__ul--social{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -382,40 +412,10 @@ footer{
     margin: 15px 25px 20px 0;
 }
 
-.footer_ul-socialMedia li{
+.footer__ul--social li{
     text-align: center;
     display: inline-block;
     padding: 6px;
-}
-
-.i_social{
-    width: 24px;
-    height: 24px;
-} 
-
-/* RESPONSIVE */
-
-@media(max-width:950px) {
-    nav {
-        text-align: center;
-    }
-
-    nav ul li {
-        margin: 0 24px;
-        float: left;
-    }
-
-}
-
-@media(max-width: 375px) {
-
-    /* ESTO HAY QUE CAMBIARLO: ESCONDER LOS LI */
-    nav ul li {
-        margin: 0 8px;
-        float: left;
-    }
-
-
 }
 
 /* seccion flexiones,fondos,dominadas */
@@ -429,59 +429,24 @@ footer{
     height: 50%;
 }
 
-/* flexiones*/
-.flexiones {
-    /*background-color: #002629;*/
+.article__tren_sup{
     display: flex;
     justify-content: space-between;
     margin: 25px;
 }
 
-.flexiones img {
+.article__tren_sup img {
     width: 700px;
     height: 40%;
     margin: 20px;
 }
 
-.text-flexiones, .fondos, .dominadas p {
+.article__tren_sup p {
     color: #000000;
     display: block;
     margin: 25px;
     font-family: National2, Helvetica, Arial, Sans-serif;
-
 }
-
-/*fondos*/
-.fondos {
-
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
-}
-
-.fondos img {
-    width: 700px;
-    height: 40%;
-    margin: 25px;
-}
-
-
-
-/*dominadas*/
-
-.dominadas {
-    /*background-color: #002629;*/
-    display: flex;
-    justify-content: space-between;
-    margin: 25px;
-}
-
-.dominadas img {
-    width: 700px;
-    height: 40%;
-    margin: 20px;
-}
-
 
 /* NUTRICION ( TABLA NUTRICIONAL ) */
 
@@ -546,4 +511,32 @@ td {
 .desc-tabla span {
     color: #0E2723;
     text-transform: uppercase;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px) {
+    nav {
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 0 24px;
+        float: left;
+    }
+}
+
+@media (max-width: 600px) {
+    
+}
+
+@media(max-width: 375px) {
+
+    /* ESTO HAY QUE CAMBIARLO: ESCONDER LOS LI */
+    nav ul li {
+        margin: 0 8px;
+        float: left;
+    }
+
+
 }
