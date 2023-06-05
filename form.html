@@ -16,7 +16,7 @@
 
     <title>Formulario</title>
 </head>
-<body class="body_form">
+<body>
     <header>
         <nav class="encabezado">
             <a href="index.html">
@@ -39,6 +39,11 @@
         <img  class="main_img-form" src="/images/Img-modificadas/1aadcbef-ca01-4255-a19a-1bc2fe4fab63.jpg" alt="">
     </div>
     
+    <div class="form__contenedor--titulo">
+        <h2 class="form__titulo">¡HAZTE</h2>
+        <h2 class="form__titulo">PARTE!</h2>
+    </div>
+
     <section class="section_form">
         <form action=# method="post" id="form">
             <h6 class="form__subtitulo"> información personal:</h6>
@@ -75,14 +80,19 @@
                 <li>
                     <label for="">Sexo:</label>
                     <select name="Género" id="select-genero">
-                        <option value="">Femenino</option>
-                        <option value="">Maculino</option>
+                        <option value="0"></option>
+                        <option value="1">Femenino</option>
+                        <option value="2">Maculino</option>
                     </select>
                 </li>
                 <li>
                     <label for="">Actividad que realiza:</label>
                     <select name="" id="select-actividad">
-                        <option value="">Futból</option>
+                        <option value="0"></option>
+                        <option value="1">Futból</option>
+                        <option value="2">Basket</option>
+                        <option value="3">Vóley</option>
+                        <option value="4">Gimnasia</option>
                     </select>
                 </li>
                 <li class="form_li-check">
@@ -115,7 +125,6 @@
             </div> <!----CIERRA EL CAPTCHA---->
             
         </form> 
-        
     </section>
 
     <footer class="footer footer--form">

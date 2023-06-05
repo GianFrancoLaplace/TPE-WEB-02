@@ -1,11 +1,15 @@
-const form = document.getElementById("form")
-const name = document.getElementById("input-name")
-const email = document.getElementById("input-email")
-const inputCheck = document.getElementById("captcha-check")
-const captcha_input = document.getElementById("captcha-input")
-const resetbtn = document.getElementById("captcha-reset")
-const captchaText = document.getElementById("captcha-container")
+const form = document.getElementById("form");
+const name = document.getElementById("input-name");
+const email = document.getElementById("input-email");
+const inputCheck = document.getElementById("captcha-check");
+const captcha_input = document.getElementById("captcha-input");
+const resetbtn = document.getElementById("captcha-reset");
+const captchaText = document.getElementById("captcha-container");
+const todoInput = document.querySelectorAll("input");
+let arrayInputs = Array.from(todoInput);
 
+let select_actividad = document.querySelectorAll("select");
+select_actividad=Array.from(select_actividad);
 
 displayCaptcha();
 
@@ -31,14 +35,14 @@ email.addEventListener("change", (e) => {
     formIsValid.email = true
 })
 
-inputCheck.addEventListener("change", (e)=>{
+inputCheck.addEventListener("change", ()=>{
   if(inputCheck.checked) formIsValid.inputCheck=true
-  console.log("CHECK")
-  console.table(formIsValid)
+  console.log(select_actividad.selectedIndex)
 })
 
 resetbtn.addEventListener("click", (e)=>{
   e.preventDefault(); // Para que el navegador no te pida completar el resto del form
+  borrarInputs();
   displayCaptcha();
 })
 
@@ -49,12 +53,21 @@ const validateForm = () => {
     else alert('Form invalid')
 }
 
+const borrarInputs = () =>{
+  for (const input of arrayInputs) {
+    input.value= ""
+    input.checked=false;
+  }
+  select_actividad.selectedIndex=0
+  for (const option of select_actividad) {
+    option.selectedIndex = 0
+  }
+
+}
+
 captcha_input.addEventListener("change", (e)=>{
   if (captcha_input.value==captchaText.textContent)
   formIsValid.captcha=true
-  // console.log(captcha_input.value)
-  // console.log(captcha_input.value==captchaText.textContent)
-  // console.log(generateCaptcha())
 })
 
 // Captcha
